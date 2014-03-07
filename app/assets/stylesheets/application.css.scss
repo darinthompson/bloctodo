@@ -11,3 +11,25 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+    background-color: #333333;
+    padding-bottom: 100px;
+}
+
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 350px; 
+  top:0;
+  left:0;
+  z-index: -1;
+}
+
+.jumbotron {
+    margin-bottom: 0px;
+    height: 350px;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+    background: transparent;
+}
