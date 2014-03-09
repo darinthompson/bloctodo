@@ -3,6 +3,7 @@ class CreateItems < ActiveRecord::Migration
     create_table :items do |t|
       t.string :description
       t.boolean :completed
+      t.integer :list_id
 
       t.timestamps
     end

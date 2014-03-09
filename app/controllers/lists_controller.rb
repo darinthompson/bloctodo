@@ -18,6 +18,7 @@ class ListsController < ApplicationController
   # GET /lists/1.json
   def show
     @list = current_user.lists.find(params[:id])
+    @items = @list.items.paginate(page: params[:page], per_page: 10)
 
     respond_to do |format|
       format.html # show.html.erb
