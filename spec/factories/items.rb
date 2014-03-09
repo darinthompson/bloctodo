@@ -2,8 +2,7 @@
 
 FactoryGirl.define do
   factory :item do
-    name "MyString"
-    id 1
-    index ""
+    description "MyString"
+    completed false
   end
 end

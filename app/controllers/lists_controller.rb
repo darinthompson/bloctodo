@@ -1,8 +1,12 @@
 class ListsController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /lists
   # GET /lists.json
   def index
-    @lists = List.all
+    @lists = current_user.lists
+
+    puts "LISTS INDEX @lists = #{@lists.inspect}"
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +17,7 @@ class ListsController < ApplicationController
   # GET /lists/1
   # GET /lists/1.json
   def show
-    @list = List.find(params[:id])
+    @list = current_user.lists.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -34,13 +38,14 @@ class ListsController < ApplicationController
 
   # GET /lists/1/edit
   def edit
-    @list = List.find(params[:id])
+    @list = current_user.lists.find(params[:id])
   end
 
   # POST /lists
   # POST /lists.json
   def create
     @list = List.new(params[:list])
+    @list.user = current_user
 
     respond_to do |format|
       if @list.save
@@ -57,6 +62,7 @@ class ListsController < ApplicationController
   # PUT /lists/1.json
   def update
     @list = List.find(params[:id])
+    @list.user = current_user
 
     respond_to do |format|
       if @list.update_attributes(params[:list])
@@ -72,7 +78,7 @@ class ListsController < ApplicationController
   # DELETE /lists/1
   # DELETE /lists/1.json
   def destroy
-    @list = List.find(params[:id])
+    @list = current_user.lists.find(params[:id])
     @list.destroy
 
     respond_to do |format|

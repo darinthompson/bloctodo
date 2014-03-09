@@ -1,3 +1,9 @@
 // import the CSS framework
 @import "bootstrap";
 @import "bootstrap-responsive";
+
+.navbar-inner {
+  background-color: tomato;
+  background-image: none;
+}
+
