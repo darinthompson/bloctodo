@@ -1,21 +1,31 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
-  <b>Name:</b>
+  <h2>Name:</h2>
   <%= @list.name %>
 </p>
 
 <p>
-  <b>Items:</b>
+  <h2>Items:</h2>
 
 <% if @items.length > 0 %>
+  <table>
+    <%= render @items %>
+  </table>
   <%= will_paginate @items %>
 <% else %>
   You have no todo items!  Go get a beer!
 <% end %>
 </p>
 
+<p>
+  <h2>Create New Item:</h2>
+<%= render partial: 'items/form', locals: { list: @list, item: @item } %>
 <!-- todo: add "new item" form here; refer to new comment form in bloccit -->
+</p>
 
 <%= link_to 'Edit', edit_list_path(@list) %> |
 <%= link_to 'Back', lists_path %>
+
+

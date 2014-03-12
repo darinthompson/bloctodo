@@ -17,8 +17,14 @@ class ListsController < ApplicationController
   # GET /lists/1
   # GET /lists/1.json
   def show
+    # The list that we want to show
     @list = current_user.lists.find(params[:id])
+
+    # The items within that list that we are showing
     @items = @list.items.paginate(page: params[:page], per_page: 10)
+
+    # The skeleton item we use to build the 'new item' form
+    @item = @list.items.new unless current_user.nil?
 
     respond_to do |format|
       format.html # show.html.erb

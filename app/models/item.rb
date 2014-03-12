@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  attr_accessible :completed, :description
+  attr_accessible :completed, :description, :list_id
 
   belongs_to :list
 

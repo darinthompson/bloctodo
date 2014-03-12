@@ -2,8 +2,24 @@
 @import "bootstrap";
 @import "bootstrap-responsive";
 
+body {
+  height: 100%;
+  background-image: image-url("norway.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .navbar-inner {
-  background-color: #f9f9f9;
+  border: none;
+  background-color: transparent;
   background-image: none;
+  box-shadow: none;
+}
+
+.navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
+  box-shadow: none;
+}
+
+a {
+  color: tomato;
 }
 
