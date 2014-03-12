@@ -19,7 +19,12 @@ body {
   box-shadow: none;
 }
 
-a {
-  color: tomato;
+.navbar .nav li a {
+  color: #000;
+  text-shadow: none;
+}
+
+.navbar .nav li a:hover {
+  border-bottom: 1px solid tomato;
 }
 

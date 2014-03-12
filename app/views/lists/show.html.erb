@@ -2,12 +2,12 @@
 
 
 <p>
-  <h2>Name:</h2>
+  <h4>Name:</h4>
   <%= @list.name %>
 </p>
 
 <p>
-  <h2>Items:</h2>
+  <h4>Items:</h4>
 
 <% if @items.length > 0 %>
   <table>
@@ -20,12 +20,12 @@
 </p>
 
 <p>
-  <h2>Create New Item:</h2>
+  <h4>Create New Item:</h4>
 <%= render partial: 'items/form', locals: { list: @list, item: @item } %>
 <!-- todo: add "new item" form here; refer to new comment form in bloccit -->
 </p>
 
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
+<b><%= link_to 'Edit', edit_list_path(@list) %> |</b>
+<b><%= link_to 'Back', lists_path %></b>
 
 
