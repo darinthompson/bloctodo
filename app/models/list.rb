@@ -6,4 +6,5 @@ class List < ActiveRecord::Base
 
   validates :name, length: { minimum: 5, maximum: 250 }, presence: true
   validates :user, presence: true
+
 end

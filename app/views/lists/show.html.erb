@@ -7,11 +7,19 @@
 </p>
 
 <p>
-  <h4>Items:</h4>
+  <h2>Items:</h2>
 
 <% if @items.length > 0 %>
-  <table>
-    <%= render @items %>
+
+  <table class="table table-bordered">
+    <thead><tr>
+      <th>Description</th>
+      <th>Completed</th>
+      <th>Complete?</th>
+    </tr></thead>
+    <tbody>
+      <%= render @items.select {|x| not x.completed} %> <!-- This needs to be a if statement to showing non completed items -->
+    </tbody>
   </table>
   <%= will_paginate @items %>
 <% else %>

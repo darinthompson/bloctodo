@@ -28,3 +28,36 @@ body {
   border-bottom: 1px solid tomato;
 }
 
+div.form-actions {
+  padding: 0;
+  margin-top: 15px;
+  background-color: transparent;
+  border-top: none;
+}
+
+.table {
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 1px solid #333;
+}
+
+.table td {
+  font-size: 1.25em;
+  padding-top: 0px;
+  line-height: 0px;
+  text-align: center; 
+  vertical-align: middle;
+  border-top: 1px solid #333;
+}
+
+.table th {
+  padding-top: 5px;
+  line-height: 25px;
+  text-align: center; 
+  vertical-align: none;
+  border-top: none;
+  font-weight: bold;
+}
+
+.table tr.main:hover {
+  background-color: tomato;
+}
