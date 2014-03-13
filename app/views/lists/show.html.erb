@@ -16,6 +16,7 @@
       <th>Description</th>
       <th>Completed</th>
       <th>Complete?</th>
+      <th>Days until Completion</th>
     </tr></thead>
     <tbody>
       <%= render @items.select {|x| not x.completed} %> <!-- This needs to be a if statement to showing non completed items -->
